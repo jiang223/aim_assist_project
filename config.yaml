@@ -1,0 +1,96 @@
+﻿screen:
+  width: 1920
+  height: 1080
+  monitor: 1
+  roi:
+    width: 640
+    height: 640
+
+capture:
+  backend: dxgi
+  target_fps: 0
+
+model:
+  path: C:\Users\98005\Documents\trae_projects\yolov8 ai\runs\detect\train5\weights\best.engine
+  backend: pt
+  trt_engine: ""
+  device: 0
+  half: true
+  imgsz: 640
+  conf: 0.25
+  iou: 0.2
+  max_det: 50
+  classes: null
+
+activation:
+  enable: true
+  key: right_mouse
+
+tracking:
+  active_preset: slow_target
+  presets:
+    slow_target:
+      lock_radius_px: 100
+      unlock_after_misses: 20
+      deadzone_px: 0
+      max_step_px: 55
+      aim_y_offset_ratio: 0.35
+      hysteresis:
+        enable: true
+        dist_ratio: 0.6
+        release_ratio: 0.55
+        boost_ratio: 0.25
+        suppress_ratio: 0.0
+      pid:
+        kp: 0.7
+        ki: 0.05
+        kd: 0.01
+        output_max: 55
+        deadzone_px: 0
+        sample_time: 0.0125
+        error_smoothing: 0.5
+        min_pid_update_dt: 0.008
+    fast_target:
+      lock_radius_px: 80
+      unlock_after_misses: 20
+      deadzone_px: 0.0
+      max_step_px: 85
+      aim_y_offset_ratio: 0.3
+      hysteresis:
+        enable: true
+        dist_ratio: 1.1
+        release_ratio: 0.9
+        boost_ratio: 0.28
+        suppress_ratio: 0.0
+      pid:
+        kp: 0.55
+        ki: 0.001
+        kd: 0.00
+        output_max: 85
+        deadzone_px: 0.0
+        sample_time: 0.0
+  mouse_move_enable: true
+  lock_radius_px: 100
+  unlock_after_misses: 4
+  deadzone_px: 1.5
+  max_step_px: 60
+  aim_y_offset_ratio: 0.35
+  hysteresis:
+    enable: true
+    dist_ratio: 1.0
+    release_ratio: 0.8
+    boost_ratio: 0.2
+    suppress_ratio: 0.0
+  pid:
+    kp: 0.45
+    ki: 0.02
+    kd: 0.04
+    output_max: 60
+    deadzone_px: 1.5
+    sample_time: 0.0
+
+visualization:
+  enable: false
+  show_infer_frame: true
+  show_labels: true
+  show_conf: true
